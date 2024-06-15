@@ -6,6 +6,8 @@
     <string name="button_translate">Traduzir</string>
     <string name="hint_output_text">Tradução aparecerá aqui</string>
     <string name="error_message">Ops! Algo deu errado na tradução.</string>
+    <string name="error_languages">Ops! Não foi possível encontrar os idiomas.</string>
     <string name="error_image_description">Imagem de erro</string>
     <string name="label_from_to">De - Para</string>
+    <string name="label_field_required">Campo obrigatório</string>
 </resources>
