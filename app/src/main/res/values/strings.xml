@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ConcurrentTranslator</string>
+    <string name="title">Meu Tradutor</string>
+    <string name="hint_input_text">Digite o texto</string>
+    <string name="instructions">Escolha o idioma de origem e o idioma de destino</string>
+    <string name="button_translate">Traduzir</string>
+    <string name="hint_output_text">Tradução aparecerá aqui</string>
 </resources>
