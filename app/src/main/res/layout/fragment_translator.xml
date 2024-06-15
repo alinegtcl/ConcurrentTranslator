@@ -13,9 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="24dp"
         android:orientation="vertical"
-        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,6 +27,7 @@
             android:background="@drawable/edit_text_background"
             android:gravity="top|start"
             android:hint="@string/hint_input_text"
+            android:inputType="text"
             android:minHeight="100dp"
             android:padding="12dp"
             android:textSize="16sp" />
@@ -39,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="8dp"
+            android:gravity="center"
             android:text="@string/instructions"
             android:textColor="@color/text_secondary"
             android:textSize="16sp" />
@@ -46,6 +46,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
             android:gravity="center"
             android:orientation="horizontal">
@@ -63,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+                android:contentDescription="@string/label_from_to"
                 android:src="@drawable/ic_arrow_right" />
 
             <Spinner
@@ -83,19 +85,22 @@
             android:text="@string/button_translate"
             android:textColor="@color/white"
             android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/output_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/output_text_background"
-            android:gravity="top|start"
-            android:hint="@string/hint_output_text"
-            android:minHeight="100dp"
-            android:padding="12dp"
-            android:textColor="@color/text_secondary"
-            android:textSize="16sp" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/output_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/output_text_background"
+        android:gravity="top|start"
+        android:hint="@string/hint_output_text"
+        android:minHeight="100dp"
+        android:padding="12dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -107,4 +112,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear_layout">
+
+        <ImageView
+            android:id="@+id/error_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/error_image_description"
+            android:src="@drawable/ic_error_sad" />
+
+        <TextView
+            android:id="@+id/error_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/error_message"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
