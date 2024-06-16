@@ -2,6 +2,7 @@ package com.tolentinoluisi.concurrenttranslator.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
 import com.tolentinoluisi.concurrenttranslator.domain.usecase.TranslatorUseCase
 import com.tolentinoluisi.concurrenttranslator.domain.utils.flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -28,10 +29,17 @@ class TranslatorViewModel(private val useCase: TranslatorUseCase) : ViewModel() 
         )
     }
 
-    fun translate(text: String, from: String, to: String) = viewModelScope.launch {
+    fun translate(text: String, from: Language, to: Language) = viewModelScope.launch {
         _state.value = TranslatorState.ShowLoading
-        val result = "Texto traduzido"
-        _state.value = TranslatorState.HideLoading
-        _state.value = TranslatorState.TranslateSuccess(result)
+        val result = useCase.translate(text, from, to)
+        result.flow(
+            { outputText ->
+                _state.value = TranslatorState.HideLoading
+                _state.value = TranslatorState.TranslateSuccess(outputText)
+            }, {
+                _state.value = TranslatorState.HideLoading
+                _state.value = TranslatorState.TranslateError
+            }
+        )
     }
 }

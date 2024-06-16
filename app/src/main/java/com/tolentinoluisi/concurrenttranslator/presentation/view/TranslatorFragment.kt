@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -24,6 +25,8 @@ class TranslatorFragment : Fragment() {
     private val viewModel: TranslatorViewModel by viewModel()
 
     private var text: String = EMPTY_STRING
+    private lateinit var sourceLanguage: Language
+    private lateinit var targetLanguage: Language
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -66,7 +69,7 @@ class TranslatorFragment : Fragment() {
                         binding.errorMessage.text = getString(R.string.error_languages)
                     }
 
-                    TranslatorState.TranslatorError -> {
+                    TranslatorState.TranslateError -> {
                         binding.outputText.visibility = View.GONE
                         binding.errorLayout.visibility = View.VISIBLE
                         binding.errorMessage.text = getString(R.string.error_message)
@@ -93,6 +96,34 @@ class TranslatorFragment : Fragment() {
         )
         binding.sourceLanguageSpinner.adapter = adapter
         binding.targetLanguageSpinner.adapter = adapter
+
+        binding.sourceLanguageSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    sourceLanguage = languages[position]
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+            }
+
+        binding.targetLanguageSpinner.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    targetLanguage = languages[position]
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>?) {}
+            }
     }
 
     private fun setupButton() {
@@ -100,8 +131,8 @@ class TranslatorFragment : Fragment() {
             if (text.isNotEmpty()) {
                 viewModel.translate(
                     text,
-                    binding.sourceLanguageSpinner.selectedItem.toString(),
-                    binding.targetLanguageSpinner.selectedItem.toString()
+                    sourceLanguage,
+                    targetLanguage
                 )
             } else {
                 binding.inputText.error = getString(R.string.label_field_required)
