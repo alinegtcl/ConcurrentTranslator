@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.tolentinoluisi.concurrenttranslator.R
 import com.tolentinoluisi.concurrenttranslator.databinding.FragmentTranslatorBinding
+import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.EMPTY_STRING
 import com.tolentinoluisi.concurrenttranslator.presentation.viewmodel.TranslatorState
 import com.tolentinoluisi.concurrenttranslator.presentation.viewmodel.TranslatorViewModel
@@ -84,11 +85,11 @@ class TranslatorFragment : Fragment() {
         }
     }
 
-    private fun setupSpinners(languages: List<String>) {
+    private fun setupSpinners(languages: List<Language>) {
         val adapter = ArrayAdapter(
             requireContext(),
             org.koin.android.R.layout.support_simple_spinner_dropdown_item,
-            languages
+            languages.map { it.name }
         )
         binding.sourceLanguageSpinner.adapter = adapter
         binding.targetLanguageSpinner.adapter = adapter
