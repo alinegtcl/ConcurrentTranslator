@@ -2,6 +2,10 @@ package com.tolentinoluisi.concurrenttranslator.domain.utils
 
 object Constants {
     const val EMPTY_STRING = ""
+    const val MEDIATYPE_MULTIPART_FORM_DATA = "multipart/form-data"
+    const val SOURCE_LANGUAGE = "source_language"
+    const val TARGET_LANGUAGE = "target_language"
+    const val TEXT = "text"
     const val BASE_URL_SERVICE = "https://text-translator2.p.rapidapi.com"
     const val SERVICE_GET_LANGUAGES = "/getLanguages"
     const val SERVICE_TRANSLATE = "/translate"

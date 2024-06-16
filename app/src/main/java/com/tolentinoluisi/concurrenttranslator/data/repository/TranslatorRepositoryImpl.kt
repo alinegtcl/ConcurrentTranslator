@@ -4,6 +4,7 @@ import com.tolentinoluisi.concurrenttranslator.data.response.Languages
 import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
 import com.tolentinoluisi.concurrenttranslator.domain.usecase.TranslatorUseCase
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.EMPTY_STRING
+import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.MEDIATYPE_MULTIPART_FORM_DATA
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Result
 import com.tolentinoluisi.concurrenttranslator.framework.service.TranslatorService
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -24,7 +25,7 @@ class TranslatorRepositoryImpl(private val service: TranslatorService) : Transla
         source: Language,
         target: Language
     ): Result<String, String> {
-        val mediaType = "multipart/form-data".toMediaTypeOrNull()
+        val mediaType = MEDIATYPE_MULTIPART_FORM_DATA.toMediaTypeOrNull()
 
         val sourceLanguage = source.code.toRequestBody(mediaType)
         val targetLanguage = target.code.toRequestBody(mediaType)

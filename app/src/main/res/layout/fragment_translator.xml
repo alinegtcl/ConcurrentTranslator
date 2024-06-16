@@ -12,7 +12,7 @@
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_small"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,69 +22,69 @@
             android:id="@+id/input_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_large"
             android:background="@drawable/edit_text_background"
             android:gravity="top|start"
             android:hint="@string/hint_input_text"
             android:inputType="text"
-            android:minHeight="100dp"
-            android:padding="12dp"
-            android:textSize="16sp" />
+            android:minHeight="@dimen/size_box_96"
+            android:padding="@dimen/margin_small"
+            android:textSize="@dimen/font_size_medium" />
 
         <TextView
             android:id="@+id/instructions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/margin_small"
             android:gravity="center"
             android:text="@string/instructions"
             android:textColor="@color/text_secondary"
-            android:textSize="16sp" />
+            android:textSize="@dimen/font_size_medium" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_large"
             android:gravity="center"
             android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/source_language_spinner"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/width_zero"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/integer_one"
                 android:background="@drawable/spinner_background"
-                android:padding="12dp" />
+                android:padding="@dimen/margin_small" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
                 android:contentDescription="@string/label_from_to"
                 android:src="@drawable/ic_arrow_right" />
 
             <Spinner
                 android:id="@+id/target_language_spinner"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/width_zero"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="@integer/integer_one"
                 android:background="@drawable/spinner_background"
-                android:padding="12dp" />
+                android:padding="@dimen/margin_small" />
         </LinearLayout>
 
         <Button
             android:id="@+id/translate_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="@dimen/margin_large"
             android:background="@drawable/button_background"
             android:text="@string/button_translate"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="@dimen/font_size_medium" />
     </LinearLayout>
 
     <TextView
@@ -94,10 +94,10 @@
         android:background="@drawable/output_text_background"
         android:gravity="top|start"
         android:hint="@string/hint_output_text"
-        android:minHeight="100dp"
-        android:padding="12dp"
+        android:minHeight="@dimen/size_box_96"
+        android:padding="@dimen/margin_small"
         android:textColor="@color/text_secondary"
-        android:textSize="16sp"
+        android:textSize="@dimen/font_size_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linear_layout" />
@@ -116,7 +116,7 @@
         android:id="@+id/error_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_default"
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone"
@@ -135,9 +135,9 @@
             android:id="@+id/error_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/margin_small"
             android:text="@string/error_message"
             android:textColor="@color/text_secondary"
-            android:textSize="16sp" />
+            android:textSize="@dimen/font_size_medium" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

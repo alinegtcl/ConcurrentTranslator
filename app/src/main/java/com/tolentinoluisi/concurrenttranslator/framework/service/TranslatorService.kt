@@ -6,6 +6,9 @@ import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.SERVICE_GE
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.SERVICE_HEADER_HOST
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.SERVICE_HEADER_KEY
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.SERVICE_TRANSLATE
+import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.SOURCE_LANGUAGE
+import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.TARGET_LANGUAGE
+import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.TEXT
 import okhttp3.RequestBody
 import retrofit2.Response
 import retrofit2.http.GET
@@ -24,8 +27,8 @@ interface TranslatorService {
     @Headers(SERVICE_HEADER_HOST, SERVICE_HEADER_KEY)
     @POST(SERVICE_TRANSLATE)
     suspend fun translate(
-        @Part("source_language") sourceLanguage: RequestBody,
-        @Part("target_language") targetLanguage: RequestBody,
-        @Part("text") text: RequestBody
+        @Part(SOURCE_LANGUAGE) sourceLanguage: RequestBody,
+        @Part(TARGET_LANGUAGE) targetLanguage: RequestBody,
+        @Part(TEXT) text: RequestBody
     ): Response<TranslateResponse>
 }

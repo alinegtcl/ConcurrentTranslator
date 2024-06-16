@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
+    <dimen name="size_box_96">96dp</dimen>
+
+    <dimen name="font_size_medium">16sp</dimen>
+
+    <dimen name="width_zero">0dp</dimen>
+
+    <integer name="integer_one">1</integer>
+</resources>
