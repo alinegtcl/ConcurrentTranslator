@@ -81,6 +81,7 @@ class TranslatorFragment : Fragment() {
 
                     is TranslatorState.TranslateSuccess -> {
                         binding.outputText.text = state.outputText
+                        binding.errorLayout.visibility = View.GONE
                         binding.outputText.visibility = View.VISIBLE
                     }
                 }
