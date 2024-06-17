@@ -2,7 +2,7 @@ package com.tolentinoluisi.concurrenttranslator.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
+import com.tolentinoluisi.concurrenttranslator.domain.entity.Language
 import com.tolentinoluisi.concurrenttranslator.domain.usecase.TranslatorUseCase
 import com.tolentinoluisi.concurrenttranslator.domain.utils.flow
 import kotlinx.coroutines.flow.MutableStateFlow

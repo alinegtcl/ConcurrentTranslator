@@ -1,7 +1,7 @@
 package com.tolentinoluisi.concurrenttranslator.data.repository
 
 import com.tolentinoluisi.concurrenttranslator.data.response.Languages
-import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
+import com.tolentinoluisi.concurrenttranslator.domain.entity.Language
 import com.tolentinoluisi.concurrenttranslator.domain.usecase.TranslatorUseCase
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.EMPTY_STRING
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.MEDIATYPE_MULTIPART_FORM_DATA

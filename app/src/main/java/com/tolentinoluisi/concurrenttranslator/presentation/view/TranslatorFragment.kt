@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.tolentinoluisi.concurrenttranslator.R
 import com.tolentinoluisi.concurrenttranslator.databinding.FragmentTranslatorBinding
-import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
+import com.tolentinoluisi.concurrenttranslator.domain.entity.Language
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Constants.EMPTY_STRING
 import com.tolentinoluisi.concurrenttranslator.presentation.viewmodel.TranslatorState
 import com.tolentinoluisi.concurrenttranslator.presentation.viewmodel.TranslatorViewModel

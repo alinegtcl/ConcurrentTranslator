@@ -1,6 +1,6 @@
 package com.tolentinoluisi.concurrenttranslator.presentation.viewmodel
 
-import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
+import com.tolentinoluisi.concurrenttranslator.domain.entity.Language
 
 sealed class TranslatorState {
 

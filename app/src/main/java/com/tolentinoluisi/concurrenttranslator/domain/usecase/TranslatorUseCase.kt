@@ -1,6 +1,6 @@
 package com.tolentinoluisi.concurrenttranslator.domain.usecase
 
-import com.tolentinoluisi.concurrenttranslator.domain.entities.Language
+import com.tolentinoluisi.concurrenttranslator.domain.entity.Language
 import com.tolentinoluisi.concurrenttranslator.domain.utils.Result
 
 interface TranslatorUseCase {
